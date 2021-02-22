@@ -1,19 +1,19 @@
 # LEMBRETES DE COMANDOS
 
 
-# SEQUELIZE
+## SEQUELIZE
 
-### Comando para criar uma migration no Sequelize
-#### yarn sequelize migration:create --name="NOME DA MIGRATE"
-
-
-### Executar a MIGRATION
-#### yarn sequelize db:migrate
+#### Comando para criar uma migration no Sequelize
+###### => yarn sequelize migration:create --name="NOME DA MIGRATE"
 
 
-### Desfazer a última MIGRATION
-#### yarn sequelize db:migrate:undu
+#### Executar a MIGRATION
+###### => yarn sequelize db:migrate
 
 
-### Desfazer todas as MIGRATIONS
-#### yarn sequelize db:migrate:undu:all
+#### Desfazer a última MIGRATION
+###### => yarn sequelize db:migrate:undu
+
+
+#### Desfazer todas as MIGRATIONS
+###### => yarn sequelize db:migrate:undu:all
