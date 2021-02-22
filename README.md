@@ -17,3 +17,39 @@
 
 #### Desfazer todas as MIGRATIONS
 ###### => yarn sequelize db:migrate:undu:all
+
+## ==================================================================================
+
+## DOCKER
+
+#### 
+###### => 
+
+
+#### 
+###### => 
+
+#### 
+###### => 
+
+
+#### 
+###### => 
+
+## ==================================================================================
+
+## ESLINT
+
+#### Iniciar configurações do Eslint
+###### => yarn eslint --init
+
+
+#### Aplicar todas as regras do eslint e fixar
+###### => yarn eslint --fix src --ext .js
+
+#### 
+###### => 
+
+
+#### 
+###### => 
