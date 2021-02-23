@@ -56,3 +56,7 @@
 
 #### Executar a migration
 ###### => yarn typeorm migration:run
+
+
+#### Reverter uma migration
+###### => yarn typeorm migration:revert
