@@ -47,9 +47,9 @@
 #### Aplicar todas as regras do eslint e fixar
 ###### => yarn eslint --fix src --ext .js
 
-#### 
-###### => 
+## ==========================================
 
+## TYPE ORM
 
-#### 
-###### => 
+#### Criar uma nova Migration
+###### => yarn typeorm migration:create -n "NOME_DA_MIGRATION"
