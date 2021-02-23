@@ -53,3 +53,6 @@
 
 #### Criar uma nova Migration
 ###### => yarn typeorm migration:create -n "NOME_DA_MIGRATION"
+
+#### Executar a migration
+###### => yarn typeorm migration:run
