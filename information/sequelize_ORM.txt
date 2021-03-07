@@ -1,0 +1,74 @@
+
+O que é o Sequelize ?
+ R: Trata-se de um ORM para banco de dados relacionais.
+
+Com o que ele funciona ? 
+ R: MySQL, Postgress, Sqlite.
+
+
+O que é um ORM:
+ - Abstração do banco de dados.
+ - Na arquitetura MVC como exemplo, as tabelas viram models.
+ - Não é utilizado SQL apenas código JS.
+
+Migrations:
+ - Controle de versão para base de dados.
+
+ - Cada arquivo de migration deve conter instruções para criação, alteração ou remoção
+  de tabelas ou colunas.
+
+ - (Vantagem): Mantém a base atualizada entre todos desenvolvedores 
+   do time e tanbém no ambiente de produção.
+
+ - As migrations ocorrem através de datas, assim não podendo depender de 
+   migrations posteriores.
+
+ IMPORTANTE: 
+    1 - A partir do momento que essa migration foi repassada para outros desenvolvedores
+    ou para o ambiente de produção, ela não pode mais ser alterada.
+        a: Caso seja necessário alterar algo, deve-se ser criada uma nova migraiton.
+
+    2 - É possível deafazer uma migration se erramos algo enquanto 
+        estivermos desenvolvendo a feature, utilizando o rollback.
+    3 - Cada migration deve realizar alterações em apenas uma tabela, sendo assim
+        para alterações maiores, deve-se criar várias migrations.
+    
+Seeds:
+    - Necessário para configurar um ambiente de teste, ou seja um forma de popular a base de dados.
+    - São executáveis apenas por códigos.
+    - Jamais serão utilizados em produção.
+    - Caso seja dados que precisam ir para produção, a própria migration pode manipular -
+      os dados da tabela.
+
+Exemplo de uso(0): 
+    Objetivo(Adicionr um novo usuário com os dados passados)
+    SQL:
+        INSERT INTO user (name, email)
+            VALUES (
+                "Juliano Abrão",
+                "juliano@gmail.com"
+            )
+    
+    Sequelize (ORM):
+        User.create({
+            name: 'Juliano Abraão',
+            email: 'juliano@gmail.com'
+        })
+
+--------------------------------------------------------------------
+
+Exemplo de uso(1): 
+    Objetivo(Projetar somente um usuário com os dados passados, que nesse caso é o email)
+
+    SQL:
+        SELECT *
+        FROM users
+        WHERE email = 'juliano@gmail.com'
+        LIMIT 1;
+    
+    Sequelize (ORM):
+        User.findOne({
+            where:{
+                email:'juliano@gmail.com'
+            }
+        })
