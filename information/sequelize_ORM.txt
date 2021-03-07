@@ -72,3 +72,59 @@ Exemplo de uso(1):
                 email:'juliano@gmail.com'
             }
         })
+
+
+Sequelize(Instalação e configuração):
+
+    !INSTALAÇÃO: 
+        1º - Realizar instalção do Sequelize
+        2º - Realizar a instalação do sequelize-cli, como dependência de DEV.
+            Finalidade: Interface que fornece comandos para manipulara criação,
+                        manutenção de migrations e models.
+
+    !ESTRUTURA DE PASTAS:
+        1º - Criar um pasta (config) dentro da pasta (src)
+            - Finalidade: Configurações necessárias para o funcionamento da aplicação.
+
+        2º - Criar pasta (database) e dentro dela a pasta (migrations).
+            - Dentro da pasta (database), ficará tudo relativo a parte de database,
+            fora a conexão ou a configuração do banco de dados.
+
+        3º - Criar o arquivo (database.js): Responsável pelas configurações da nossa base de dados.
+
+        4º - Criar pasta (app) dentro de (src):
+            - Dentro da pasta (app) ficará a maioria dos códigos que envolvem
+            as regras de negócio lógica. EX: (controllers, models)
+
+    !CONFIGURAÇÃO:
+        1º - Criar um arquivo chamado (sequelize.rc), será responsável por exportar os caminhos
+             das pastas (database. migrations, config etc...).
+
+             - Dentro do (sequelize.rc), exportar os caminhos das pastas necessárias:
+                (EXEMPLO):
+                    module.exports = {
+                        config: resolve(__dirname, 'src', 'config', 'database.js'),
+                        'models-path': resolve(__dirname, 'src', 'app', 'models'),
+                        'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'),
+                        'seeders-path': resolve(__dirname, 'src', 'database', 'seeds')
+                    }
+        2º - Exportar as configurações do banco no arquivo (src/config/database.js)
+
+            POSTGRES:
+                (É necessário instalar as dependências: pg, ph-hstore:(yarn add pg pg-hstore))
+            {
+                dialect: 'postgres', (Qual é o banco de dados que será conectado)
+                host: 'localhost',   (Onde o banco de dados se encontra)
+                username: 'posgres', (Usuário para acessar o servidor do banco de dados)
+                password: 'docker123', (Senha de acesso a servidor de dados de dados)
+                database: 'gobarber', (Nome da base de dados que ele deverá se conectar)
+                define:{
+                    timestamps: true, (Garante que a aplicação possua uma coluna,
+                                       created_at e updatad_at dentro de cada tabela do 
+                                       banco de dados
+                                      )
+                    underscored: true, ()
+                    underscoredAll: true,
+
+                }
+            }
