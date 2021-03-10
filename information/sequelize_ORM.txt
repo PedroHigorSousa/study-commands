@@ -11,6 +11,8 @@ O que é um ORM:
  - Na arquitetura MVC como exemplo, as tabelas viram models.
  - Não é utilizado SQL apenas código JS.
 
+--------------------------------------------------------------------------------------------------
+
 Migrations:
  - Controle de versão para base de dados.
 
@@ -32,7 +34,22 @@ Migrations:
         estivermos desenvolvendo a feature, utilizando o rollback.
     3 - Cada migration deve realizar alterações em apenas uma tabela, sendo assim
         para alterações maiores, deve-se criar várias migrations.
+
+    Como criar uma migration (Exemplode de uma migration de usuários):
+        yarn sequelize migration:create --name=create-users
     
+    Como executar a migrate para que assim ela seja criada:
+        yarn sequelize db:migrate
+    
+    Desfazer a ultima migration:
+        yarn sequelize db:migrate:undo
+
+    Desfazer todas as migrations:
+        yarn sequelize db:migrate:undo:all
+
+    
+--------------------------------------------------------------------------------------------------
+
 Seeds:
     - Necessário para configurar um ambiente de teste, ou seja um forma de popular a base de dados.
     - São executáveis apenas por códigos.
@@ -72,6 +89,9 @@ Exemplo de uso(1):
                 email:'juliano@gmail.com'
             }
         })
+
+
+--------------------------------------------------------------------------------------------------
 
 
 Sequelize(Instalação e configuração):
