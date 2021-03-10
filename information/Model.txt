@@ -1,0 +1,5 @@
+Por onde começar ? 
+ R: Criando o arquivo dentro da pasta (models), dentro do mesmo arquivo
+    deve ser importado o módulo (Model) de dentro do ORM(Sequelize), 
+    após a importação deve-se criar uma instância de classe de Model, 
+    com a determinada entidade em que se irá trbalhar.
