@@ -1,0 +1,33 @@
+
+Para que serve ?
+ - Criação de ambientes isolaveis.
+
+Como é feita a comunicação ? 
+ - Todos os containers criados expõe portas para que sistemas externos possam se comunicar
+   com o serviço que está lá dentro.
+ 
+
+Conceitos:
+    Imagem: Um serviço disponível do docker ou seja, tecnologias ou aplicações
+            que podem ser colocadas dentro de containers.
+    
+    Container: Trata-se de ums instância de uma imagem. EX: É possível rodar 3 containers
+               utilizando a mesma imagem.
+    
+    Docker Registry (Docker Hub): Servidor de registro de imagens do Docker.
+    
+    Dockerfile: Receita para que possam ser montado sua própria imagem.
+
+
+Configurações:
+    Realizar Download 
+    pesquisar pela imagem do sistema => Docker.io
+
+
+Comando para configurar um serviço postgres:
+    - docker run --name database_postgres -e POSTGRES_PASSWORD=docker1234 -p 5432:5432 -d postgres
+        
+        - OBS: (-p 5432:5432): Todas as vezes que for acessado a porta (5432) na máquina local
+          ele deve redirecionar para a porta 5432 do container.
+
+        - OBS: (-d postgres): Refese a imagem que você quer utilizar. 

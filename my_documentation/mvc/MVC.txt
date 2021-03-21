@@ -1,0 +1,31 @@
+
+O que é MVC ?
+ R: Trata-se de uma forma de estruturar as pastas e arquivos da nossa aplicação.
+ OBJETIVO-PRINCIPAL: Separar as responsabilidades de cada tipo de arquivo.
+
+ Agentes Principais:
+    MODEL: O model armazena a abstração do banco de dados, utilizado para manipular os dados
+           contidos nas tabelas do banco. Não possuem responsabilidades sobre a regra de negócio
+           da nossa aplicação.
+    
+    CONTROLLER: O ponto de entrada das nossas requisições da nossa aplicação, uma rota
+                geralmente está associada diretamente com um método do controller. assim
+                podemos incluir agrande parte das regras de negócio da aplicação nos
+                controllers (conforme a aplicação cresce podemos isolar as regras)
+
+                - É uma classe
+                - Ele sempre vai retornar um json
+                - Não chama outro controller
+                ! - Quando deve-se criar um novo controler na aplicação que está sendo 
+                  desenvolvida ?
+                    R: Toda vez que tiver uma nova entidade na aplicação.
+                - Deve ter apenas 5 métodos sendo eles:
+                    (Utilizando o exemplo de um: "UserController.js")
+                    - index(): Listagem de usuários
+                    - show(): Exibir um único usuário
+                    - store(): Cadastrar um usuário
+                    - update(): Alterar um usuário
+                    - delete(): deletar um usuário
+
+    VIEW: Retorno ao cliente os dados(HTML) quando se trata de uma aplicação FULL MVC,
+          caso seja modelo SPA o back-and retorna somente dados(JSON)
